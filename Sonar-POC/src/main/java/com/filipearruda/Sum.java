@@ -16,4 +16,16 @@ public class Sum {
     public long sum(long a, long b){
         return a + b;
     }
+
+    public char sum(char a, char b){
+        return (char) (a + b);
+    }
+
+    public byte sum(byte a, byte b){
+        return (byte) (a + b);
+    }
+
+    public short sum(short a, short b){
+        return (short) (a + b);
+    }
 }
