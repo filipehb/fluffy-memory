@@ -14,6 +14,36 @@
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.plugin>3.11.0</maven.compiler.plugin>
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+        <maven.javadoc.plugin>3.6.2</maven.javadoc.plugin>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>${maven.compiler.plugin}</version>
+                        <configuration>
+                            <source>17</source>
+                            <target>17</target>
+
+                            <!-- OMITE INFORMACAO DE DEBUGGING -->
+                            <compilerArgs>
+                                <arg>-g:none</arg>
+                            </compilerArgs>
+                        </configuration>
+                    </plugin>
+
+                </plugins>
+            </build>
+
+        </profile>
+    </profiles>
 
 </project>
